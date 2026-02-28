@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import styles from './GainLifeGame.module.css'
 
 // Тип одного "сердца" (таргета)
@@ -301,8 +301,8 @@ export function GainLifeGame() {
   // Если компонент размонтируется — чистим интервалы
   useEffect(() => {
     return () => clearLoops()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  // eslint-disable-next- line react-hooks/exhaustive-deps
 
   return (
     <div className={styles.root}>
