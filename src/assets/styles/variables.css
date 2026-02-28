@@ -1,0 +1,61 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-blue: #128cef;
+
+  --color-green: #7dff68;
+
+  --color-yellow: #e8bb4a;
+
+  --blue-transparent-1: rgba(18, 140, 239, 0.1);
+  --blue-transparent-2: rgba(18, 140, 239, 0.7);
+  --blue-transparent-3: rgba(18, 140, 239, 0.17);
+  --blue-transparent-4: rgba(18, 140, 239, 0.2);
+  --blue-transparent-5: rgba(18, 140, 239, 0.3);
+
+  --green-transparent-1: rgba(125, 255, 104, 0.1);
+  --green-transparent-2: rgba(125, 255, 104, 0.5);
+
+  --yellow-transparent-1: rgba(232, 187, 74, 0.1);
+  --yellow-transparent-2: rgba(232, 187, 74, 0.5);
+
+  --color-dark: #000003;
+  --color-dark-2: #0e0e0f;
+  --color-dark-3: rgba(36, 36, 37, .7);
+  --color-dark-4: rgba(36, 36, 37, 1);
+  --color-dark-5: rgba(36, 36, 37, .9);
+
+
+  --color-grey-1: #7a7a7a;
+  --color-grey-2: rgba(255, 255, 255, 0.15);
+  --color-grey-3: rgba(255, 255, 255, 0.3);
+  --color-grey-4: rgba(255, 255, 255, 0.6);
+  --color-grey-5: rgba(255, 255, 255, 0.5);
+  --color-grey-6: rgba(51, 51, 51, .1);
+  --color-grey-7: #333333;
+  --color-grey-8: rgba(255, 255, 255, 0.1);
+
+
+  --border-grey-1: 1px solid var(--color-grey-2);
+  --border-grey-2: 1px solid var(--color-grey-3);
+  --border-grey-3: 1px solid var(--color-grey-4);
+  --border-grey-4: 1px solid var(--color-grey-7);
+
+  --border-blue-1: 1px solid var(--color-blue);
+  --border-blue-2: 2px solid var(--color-blue);
+
+  --border-radius: 1px;
+  --border-radius-1: 2px;
+  --border-radius-2: 3px;
+  --border-radius-3: 4px;
+  --border-radius-4: 8px;
+  --border-radius-5: 14px;
+
+  --box-shadow: 0 4px 4px -4px rgba(12, 12, 13, 0.05), 0 16px 32px -4px rgba(12, 12, 13, 0.1);
+  --box-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  --input-height: 40px;
+
+  --transition-duration: 0.2s;
+}

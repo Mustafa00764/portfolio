@@ -1,0 +1,58 @@
+.sidebar-left {
+  position: relative;
+  min-width: 194px;
+  max-width: 194px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.sidebar-poster {
+  width: 100%;
+  aspect-ratio: 1/1;
+  padding: 14px;
+
+  & > img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+
+  & > p {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  & > h3 {
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--color-blue);
+  }
+}
+
+.motto {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 5px;
+
+  & > .motto-title {
+    color: var(--color-blue);
+    font-size: 18px;
+    line-height: 100%;
+  }
+
+  & > .motto-text {
+    line-height: 100%;
+    color: var(--color-grey-4);
+  }
+}

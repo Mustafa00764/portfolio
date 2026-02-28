@@ -1,0 +1,128 @@
+.sidebar-right {
+  min-width: 194px;
+  max-width: 194px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .line {
+    position: absolute;
+    background-color: var(--color-blue);
+  }
+
+  .user-info {
+    padding: 0 10px;
+    margin-top: 15px;
+  }
+}
+
+.sidebar-right-info {
+  position: relative;
+}
+
+.sidebar-right-union {
+  color: var(--color-white);
+  position: relative;
+  display: flex;
+  height: 23px;
+  padding: 0 10px;
+  align-items: center;
+  border-radius: 0 var(--border-radius-1) 0 0;
+  overflow: hidden;
+
+  h3 {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .union {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    color: var(--blue-transparent-2);
+  }
+}
+
+.sidebar-right-subtitle {
+  background-color: var(--blue-transparent-1);
+  padding: 8px 10px;
+  p {
+    color: var(--color-grey-1);
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+.sidebar-right-description {
+  padding-left: 10px;
+  margin-top: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  p {
+    color: var(--color-grey-1);
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: 0;
+    &:first-child {
+      font-size: 14px;
+      color: var(--color-white);
+    }
+  }
+}
+
+.rewards {
+  margin-top: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 10px;
+
+  p {
+    color: var(--color-white);
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+.rewards-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.rewards-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 8px;
+  border: var(--border-grey-2);
+  display: flex;
+  align-items: center;
+
+  & > img {
+    object-fit: cover;
+  }
+}
+
+.settings {
+  & > .btn-setting {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 33px;
+    justify-content: space-between;
+
+    & > h3 {
+      font-size: 18px;
+      line-height: 100%;
+    }
+
+    & > .setting-icon {
+      height: 24px;
+    }
+  }
+}

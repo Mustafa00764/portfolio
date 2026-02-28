@@ -1,0 +1,28 @@
+.gameCard {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+
+  img {
+    width: 100%;
+    border: var(--border-grey-1);
+    border-radius: var(--border-radius-3);
+  }
+
+
+  h3 {
+    font-size: 18px;
+    line-height: 100%;
+    color: var(--color-blue);
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--color-grey-1);
+  }
+
+}

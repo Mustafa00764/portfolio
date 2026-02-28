@@ -1,0 +1,80 @@
+.portfolio-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* & > .border {
+    height: 100%;
+  } */
+}
+
+.portfolio-poster {
+  height: auto;
+  position: relative;
+
+  & > .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
+.portfolio-info {
+  width: 100%;
+  height: 100%;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+  border-radius: var(--border-radius-1);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.8);
+
+  position: relative;
+  gap: 70px;
+
+  & > p {
+    width: 100%;
+    font-size: 14px;
+    line-height: 100%;
+    margin-bottom: 24px;
+  }
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.portfolio-title {
+  padding: 16px 18px;
+}
+
+.project-name {
+  width: 100%;
+  flex-shrink: 1;
+  display: flex;
+  position: relative;
+  align-items: baseline;
+  gap: 2px;
+  /* background-color: transparent; */
+
+  & > h3 {
+    width: auto;
+    font-size: 18px;
+    line-height: 100%;
+    color: var(--color-blue);
+  }
+
+  & > hr {
+    border: none;
+    flex: 1 1 0;
+    border-bottom: 2px dashed var(--color-blue);
+    margin-top: -3px;
+    order: 2;
+  }
+}

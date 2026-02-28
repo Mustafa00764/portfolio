@@ -1,0 +1,68 @@
+.navbarCard {
+  max-width: 152px;
+  width: 100%;
+  display: flex;
+  position: relative;
+
+  &:hover {
+    .btn-nav {
+      .union {
+        color: var(--color-blue);
+        transition: color 0.25s linear;
+        transition-delay: 0.05s;
+      }
+    }
+
+    .line {
+      background-color: var(--color-blue);
+      transition: background-color 0.25s linear;
+      transition-delay: 0.05s;
+    }
+  }
+}
+
+.isActive {
+  .btn-nav {
+    .union {
+      color: var(--color-blue);
+      transition: color 0.25s linear;
+      transition-delay: 0.05s;
+    }
+  }
+
+  .line {
+    background-color: var(--color-blue);
+    transition: background-color 0.25s linear;
+    transition-delay: 0.05s;
+  }
+}
+
+.navbar-info {
+  width: 100%;
+}
+
+.navbar-text {
+  max-width: 90%;
+  padding: 8px 10px;
+  font-size: 8px;
+  line-height: 100%;
+  color: var(--color-grey-5);
+  background-color: var(--color-grey-6);
+}
+
+.btn-nav {
+  .union {
+    color: var(--color-dark-3);
+    transition: color 0.25s linear;
+    transition-delay: 0.05s;
+  }
+}
+
+.line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: var(--color-dark-4);
+  transition: background-color 0.25s linear;
+  transition-delay: 0.05s;
+}

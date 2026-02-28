@@ -1,0 +1,133 @@
+.btn {
+  &.btn-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-blue);
+    border: var(--border-grey-2);
+    border-radius: var(--border-radius-3);
+    background-color: transparent;
+    transition: all 0.2s;
+
+    &:hover {
+      border: var(--border-blue-1);
+      transition: all 0.2s;
+    }
+
+    &:active {
+      scale: 0.96;
+    }
+  }
+
+  &.btn-default {
+    background-color: transparent;
+    border: none;
+    border-radius: var(--border-radius-3);
+    color: var(--color-white);
+    font-size: 14px;
+    line-height: 18px;
+    transition: all 0.2s;
+
+    &:hover {
+      color: var(--color-blue);
+      transition: all 0.2s;
+    }
+  }
+
+  &.btn-union {
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--color-dark);
+    background-color: transparent;
+    text-align: start;
+    opacity: 0.7;
+    border-radius: var(--border-radius-1);
+    transition: all 0.2s;
+    height: 23px;
+
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      opacity: 1;
+      transition: all 0.2s;
+    }
+  }
+
+  & > .union {
+    position: absolute;
+    width: 194px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    color: var(--color-blue);
+  }
+
+  &.btn-blue {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: var(--border-blue-1);
+    border-radius: var(--border-radius-3);
+    color: var(--color-blue);
+    font-size: 18px;
+    line-height: 20px;
+    height: 33px;
+  }
+
+  &.btn-border-blue {
+    color: var(--color-white);
+    border: var(--border-blue-1);
+    border-radius: var(--border-radius-3);
+    height: 33px;
+    font-size: 14px;
+
+    & > p {
+      line-height: 100%;
+    }
+  }
+
+  &.btn-full-blue {
+    color: var(--color-dark);
+    background-color: var(--color-blue);
+    border-radius: var(--border-radius-3);
+    font-size: 18px;
+    line-height: 20px;
+    height: 33px;
+  }
+
+  &.btn-xl {
+    padding: 6px 4px 6px 6px;
+  }
+
+  &.btn-2xl {
+    padding: 4px 4px 4px 6px;
+  }
+
+  &.btn-3xl {
+    padding: 6px 12px;
+  }
+
+  &.btn-large {
+    padding: 0 4px;
+  }
+
+  &.btn-icon {
+    padding: 9px;
+  }
+
+  &.btn-small {
+    /* padding: 6px 4px; */
+    padding: 0;
+  }
+
+  &.btn-nav {
+    color: var(--color-white);
+    opacity: 1;
+    padding: 0 10px;
+    border-radius: 0 var(--border-radius-1) var(--border-radius-1) 0;
+  }
+}
