@@ -1,10 +1,12 @@
 import TechnoGrid from '@/components/layout/technoGrid/TechnoGrid'
+import styles from './Home.module.css'
 
 const Home = () => {
   const technologies = [
     {
       id: 1,
       title: 'git',
+      text: 'version control',
       color: '#DE4C36',
       img: '',
       icon: (
@@ -25,6 +27,7 @@ const Home = () => {
     {
       id: 2,
       title: 'React JS',
+      text: 'UI library',
       color: '#128cef',
       img: '',
       icon: (
@@ -45,6 +48,8 @@ const Home = () => {
     {
       id: 3,
       title: 'Next JS',
+      text: 'React framework',
+
       color: '#ffffff',
       img: '',
       icon: (
@@ -62,6 +67,8 @@ const Home = () => {
     {
       id: 4,
       title: 'Node JS',
+      text: 'runtime environment',
+
       color: '#34C759',
       img: '',
       icon: (
@@ -81,7 +88,8 @@ const Home = () => {
     },
     {
       id: 5,
-      title: 'JavaScript (ES6+)',
+      title: 'JavaScript',
+      text: 'programming language',
       color: '#FFCC00',
       img: '',
       icon: (
@@ -102,7 +110,8 @@ const Home = () => {
     {
       id: 6,
       title: 'Figma',
-      color: '',
+      text: 'interface design',
+      color: 'linear-gradient(135deg, #F24E1E 0%, #FF7262 25%, #A259FF 50%, #19BCFE 75%, #09CF83 100%)',
       img: '/images/figma.png',
       icon: (
         <svg width="100%" height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -131,6 +140,7 @@ const Home = () => {
     {
       id: 7,
       title: 'HTML5',
+      text: 'page markup',
       color: '#E44D26',
       img: '',
       icon: (
@@ -153,6 +163,7 @@ const Home = () => {
     {
       id: 8,
       title: 'CSS3',
+      text: 'element styling',
       color: '#1172B8',
       img: '',
       icon: (
@@ -175,6 +186,7 @@ const Home = () => {
     {
       id: 9,
       title: 'TypeScript',
+      text: 'typed JavaScript',
       color: '#3178c6',
       img: '',
       icon: (
@@ -191,6 +203,7 @@ const Home = () => {
     {
       id: 10,
       title: 'Tailwind CSS',
+      text: 'utility CSS framework',
       color: '#2298BD',
       img: '',
       icon: (
@@ -227,6 +240,7 @@ const Home = () => {
     {
       id: 11,
       title: 'Nest JS',
+      text: 'server framework',
       color: '#E0234E',
       img: '',
       icon: (
@@ -251,6 +265,7 @@ const Home = () => {
     {
       id: 12,
       title: 'Material UI',
+      text: 'React components',
       color: '#00B0FF',
       img: '',
       icon: (
@@ -287,6 +302,7 @@ const Home = () => {
     {
       id: 13,
       title: 'Redux toolkit',
+      text: 'state management',
       color: '#764ABC',
       img: '',
       icon: (
@@ -311,6 +327,7 @@ const Home = () => {
     {
       id: 14,
       title: 'Ant Design',
+      text: 'UI library',
       color: '#4285EB',
       img: '',
       icon: (
@@ -398,6 +415,7 @@ const Home = () => {
     {
       id: 15,
       title: 'GitLab',
+      text: 'Git platform',
       color: '#E24329',
       img: '',
       icon: (
@@ -446,6 +464,7 @@ const Home = () => {
     {
       id: 16,
       title: 'Postgresql',
+      text: 'relational database',
       color: '#336791',
       img: '',
       icon: (
@@ -475,6 +494,7 @@ const Home = () => {
     {
       id: 17,
       title: 'Prisma',
+      text: 'Node.js ORM',
       color: '#0c344b',
       img: '',
       icon: (
@@ -491,6 +511,7 @@ const Home = () => {
     {
       id: 18,
       title: 'shadcn ui',
+      text: 'component collection',
       color: '#ffffff',
       img: '',
       icon: (
@@ -524,6 +545,7 @@ const Home = () => {
     {
       id: 19,
       title: 'react hook form',
+      text: 'form management',
       color: '#ec5990',
       img: '',
       icon: (
@@ -551,6 +573,7 @@ const Home = () => {
     {
       id: 20,
       title: 'zod',
+      text: 'data validation',
       color: '#274D82',
       img: '',
       icon: (
@@ -599,8 +622,8 @@ const Home = () => {
     }
   ]
   return (
-    <div className="home">
-      <h1 className="home-title">Technical Stack</h1>
+    <div className={styles.home}>
+      <h1 className={styles.homeTitle}>Technical Stack</h1>
       <TechnoGrid technologies={technologies} />
     </div>
   )

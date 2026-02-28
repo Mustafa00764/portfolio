@@ -1,5 +1,5 @@
 import GameCard from '@/components/layout/cards/game-card/GameCard'
-import '@assets/styles/pages/games.css'
+import styles from './Games.module.css'
 import { Link } from 'react-router-dom'
 
 const Games = () => {
@@ -48,13 +48,13 @@ const Games = () => {
     }
   ]
   return (
-    <div className="games">
+    <div className={styles.games}>
       <p>mini games</p>
-      <div className="games-text">
+      <div className={styles.text}>
         <p>Here you will see a few mini games I implemented in React or in Canvas.</p>
         <p>Have fun!</p>
       </div>
-      <div className="games-list">
+      <div className={styles.list}>
         {games.map(game => {
           return (
             <Link to={`/games/${game.slug}`} key={game.id}>

@@ -14,12 +14,12 @@
   );
 }
 
-.services-title {
+.title {
   font-size: 18px;
   line-height: 100%;
 }
 
-.services-forms {
+.forms {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -27,14 +27,14 @@
   flex-wrap: wrap;
 }
 
-.services-form {
+.form {
   display: flex;
   column-gap: 24px;
   row-gap: 12px;
   flex-wrap: wrap;
 }
 
-.services-filter {
+.filter {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -88,7 +88,7 @@
   }
 }
 
-.services-grid {
+.grid {
   width: 100%;
   height: auto;
   overflow-x: hidden;

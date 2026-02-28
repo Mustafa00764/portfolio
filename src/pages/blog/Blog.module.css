@@ -14,13 +14,13 @@
   );
 }
 
-.blog-header {
+.blogHeader {
   display: flex;
   width: 100%;
   gap: 24px;
 }
 
-.blog-author {
+.blogAuthor {
   display: flex;
   width: 100%;
   align-items: center;
@@ -36,7 +36,7 @@
   }
 }
 
-.blog-author-info {
+.blogAuthorInfo {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -50,7 +50,7 @@
   }
 }
 
-.blog-info {
+.blogInfo {
   width: 100%;
   overflow-x: hidden;
   display: flex;
@@ -81,7 +81,7 @@
   }
 }
 
-.blog-title {
+.blogTitle {
   display: flex;
   flex-direction: column;
   gap: 8px;

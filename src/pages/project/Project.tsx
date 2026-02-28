@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import '@assets/styles/pages/project.css'
+import styles from './Project.module.css'
 import { useEffect, useMemo } from 'react'
 import Border from '@/components/ui/Border'
 import Button from '@/components/ui/Button'
@@ -619,13 +619,13 @@ const Project = () => {
   }, [technologies])
 
   return (
-    <div className="project">
+    <div className={styles.project}>
       <p>creations {id}</p>
-      <div className="project-main">
-        <div className="project-information">
-          <div className="project-details">
-            <div className="project-union">
-              <div className="union">
+      <div className={styles.main}>
+        <div className={styles.information}>
+          <div className={styles.details}>
+            <div className={styles.projectUnion}>
+              <div className={styles.union}>
                 <svg
                   width="100%"
                   height="100%"
@@ -641,19 +641,19 @@ const Project = () => {
               </div>
               <p>details</p>
             </div>
-            <div className="project-info">
+            <div className={styles.info}>
               <p>project name</p>
               <h3>CloudFab.com</h3>
             </div>
             <hr />
-            <div className="project-info">
+            <div className={styles.info}>
               <p>brief</p>
               <h3>one sentence explanation for what the project is.</h3>
             </div>
           </div>
-          <div className="project-technologies">
-            <div className="project-union">
-              <div className="union">
+          <div className={styles.technologies}>
+            <div className={styles.projectUnion}>
+              <div className={styles.union}>
                 <svg
                   width="100%"
                   height="100%"
@@ -669,11 +669,11 @@ const Project = () => {
               </div>
               <p>technologies</p>
             </div>
-            <div className="technology-list">
+            <div className={styles.list}>
               {filteredTechnology.map(technology => {
                 return (
-                  <div key={technology.id} className="project-technology">
-                    <div className="technology-border">
+                  <div key={technology.id} className={styles.technology}>
+                    <div className={styles.border}>
                       <svg
                         width="100%"
                         height="100%"
@@ -687,7 +687,7 @@ const Project = () => {
                         />
                       </svg>
                     </div>
-                    <div className="technology-icon" style={{ color: technology.color }}>
+                    <div className={styles.icon} style={{ color: technology.color }}>
                       {technology.icon}
                     </div>
                   </div>
@@ -695,9 +695,9 @@ const Project = () => {
               })}
             </div>
           </div>
-          <div className="project-about">
-            <p className="about-title">About:</p>
-            <p className="about-description">
+          <div className={styles.about}>
+            <p className={styles.title}>About:</p>
+            <p className={styles.description}>
               <span>
                 The team has encountered several challenges during the development process,
                 including unexpected system crashes, hardware malfunctions
@@ -714,22 +714,22 @@ const Project = () => {
             </p>
           </div>
         </div>
-        <div className="file-xplorer">
+        <div className={styles.fileXplorer}>
           <Border>
-            <div className="file-xplorer-title">
+            <div className={styles.fileXplorerTitle}>
               <p>file xplorer</p>
             </div>
-            <div className="file-xplorer-location">
+            <div className={styles.fileXplorerLocation}>
               <p>location:</p>
               <p>/projects/{'the-name'}</p>
             </div>
-            <div className="file-xplorer-images">
+            <div className={styles.fileXplorerImages}>
               {technologies.map((item, index) => {
                 if (index > 8) return
                 return (
-                  <div className="file-xplorer-image">
-                    <div className="image"></div>
-                    <div className="image-title">
+                  <div className={styles.fileXplorerImage}>
+                    <div className={styles.image}></div>
+                    <div className={styles.imageTitle}>
                       <p>{item.title}.jpg</p>
                       <p>{(index + 1) * 13} kb</p>
                     </div>
@@ -738,9 +738,9 @@ const Project = () => {
               })}
             </div>
           </Border>
-          <div className="btns">
+          <div className={styles.btns}>
             <Button variant='full-blue' size='3xl'>view project demo</Button>
-            <Button variant='blue' size='3xl'>Back to all projects</Button>
+            <Button variant='blue' size='3xl' className={styles.btnBlue}>Back to all projects</Button>
           </div>
         </div>
       </div>

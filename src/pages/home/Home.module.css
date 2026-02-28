@@ -1,12 +1,11 @@
 .home {
   height: 100%;
-  padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  padding: 32px 0;
+}
 
-  & > .home-title {
-    letter-spacing: 0.1em;
-  }
+.homeTitle {
+  letter-spacing: 0.1em;
 }

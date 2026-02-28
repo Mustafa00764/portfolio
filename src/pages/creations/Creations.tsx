@@ -4,7 +4,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
-import '@assets/styles/pages/creations.css'
+import styles from './Creations.module.css'
 import PortfolioCard from '@/components/layout/cards/PortfolioCard'
 import { useState } from 'react'
 
@@ -124,7 +124,7 @@ const Creations = () => {
   }
 
   return (
-    <div className="creations" onPointerDown={checkSlide} onPointerUp={checkSlide}>
+    <div className={styles.creations} onPointerDown={checkSlide} onPointerUp={checkSlide}>
       <p>Creations</p>
       <Swiper
         effect={'coverflow'}
@@ -148,7 +148,7 @@ const Creations = () => {
         //   type: 'fraction'
         // }}
         modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-        className="mySwiper"
+        className={styles.mySwiper}
       >
         {slides.map(slide => {
           return (
@@ -158,9 +158,9 @@ const Creations = () => {
           )
         })}
       </Swiper>
-      <div className="portfolio-slide-description">
+      <div className={styles.portfolioSlideDescription}>
         <p>{String(slides[currentSlide].description)}</p>
-        <div className="portfolio-slide-icon">
+        <div className={styles.portfolioSlideIcon}>
           <svg
             width="100%"
             height="auto"
@@ -174,7 +174,7 @@ const Creations = () => {
           </svg>
         </div>
       </div>
-      <p className='counter'>{currentSlide + 1}/{slides.length}</p>
+      <p className={styles.counter}>{currentSlide + 1}/{slides.length}</p>
     </div>
   )
 }

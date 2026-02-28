@@ -1,7 +1,11 @@
-import BlogCard from '@/components/layout/cards/BlogCard'
-import '@assets/styles/pages/blogs.css'
+import styles from './Blog.module.css'
+import { Link, useParams } from 'react-router-dom'
+import poster from '@/assets/images/poster.png'
+import Button from '@/components/ui/Button'
 
 const Blog = () => {
+  const { id } = useParams()
+
   const blogs = [
     {
       id: 1,
@@ -10,7 +14,7 @@ const Blog = () => {
       subtitle: 'A comprehensive guide to setting up your professional portfolio in minutes',
       createDate: '1 month ago',
       texts: (
-        <div>
+        <div className={styles.description}>
           <h2>About</h2>
           <p>
             Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio
@@ -32,7 +36,7 @@ const Blog = () => {
       subtitle: 'A comprehensive guide to setting up your professional portfolio in minutes',
       createDate: '1 month ago',
       texts: (
-        <div>
+        <div className={styles.description}>
           <h2>About</h2>
           <p>
             Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio
@@ -54,7 +58,7 @@ const Blog = () => {
       subtitle: 'A comprehensive guide to setting up your professional portfolio in minutes',
       createDate: '1 month ago',
       texts: (
-        <div>
+        <div className={styles.description}>
           <h2>About</h2>
           <p>
             Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio
@@ -76,7 +80,7 @@ const Blog = () => {
       subtitle: 'A comprehensive guide to setting up your professional portfolio in minutes',
       createDate: '1 month ago',
       texts: (
-        <div>
+        <div className={styles.description}>
           <h2>About</h2>
           <p>
             Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio
@@ -92,13 +96,32 @@ const Blog = () => {
       )
     }
   ]
+
+  const currentBlog = blogs.filter(blog => blog.id === Number(id))[0]
+
   return (
-    <div className="blogs">
-      <p>Blogs</p>
-      <div className="blogs-list">
-        {blogs.map(blog => {
-          return <BlogCard key={blog.id} blog={blog} />
-        })}
+    <div className={styles.blog}>
+      <div className={styles.blogHeader}>
+        <div className={styles.blogAuthor}>
+          <div className={styles.blogAuthorInfo}>
+            <img src={poster} alt="poster" />
+            <p>Luz Wintheiser</p>
+          </div>
+          <p>{currentBlog.createDate}</p>
+        </div>
+        <Link to="/blog">
+          <Button size="xl">
+            <p>blogs</p>
+          </Button>
+        </Link>
+      </div>
+      <div className={styles.blogInfo}>
+        <div className={styles.blogTitle}>
+          <h1>{currentBlog.title}</h1>
+          <p>{currentBlog.subtitle}</p>
+        </div>
+        <img className={styles.poster} src={currentBlog.poster} alt="img" />
+        {currentBlog.texts}
       </div>
     </div>
   )

@@ -1,11 +1,7 @@
-import '@assets/styles/pages/blog.css'
-import { Link, useParams } from 'react-router-dom'
-import poster from '@/assets/images/poster.png'
-import Button from '@/components/ui/Button'
+import BlogCard from '@/components/layout/cards/BlogCard'
+import styles from './Blogs.module.css'
 
 const Blog = () => {
-  const { id } = useParams()
-
   const blogs = [
     {
       id: 1,
@@ -14,7 +10,7 @@ const Blog = () => {
       subtitle: 'A comprehensive guide to setting up your professional portfolio in minutes',
       createDate: '1 month ago',
       texts: (
-        <div className="description">
+        <div>
           <h2>About</h2>
           <p>
             Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio
@@ -36,7 +32,7 @@ const Blog = () => {
       subtitle: 'A comprehensive guide to setting up your professional portfolio in minutes',
       createDate: '1 month ago',
       texts: (
-        <div className="description">
+        <div>
           <h2>About</h2>
           <p>
             Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio
@@ -58,7 +54,7 @@ const Blog = () => {
       subtitle: 'A comprehensive guide to setting up your professional portfolio in minutes',
       createDate: '1 month ago',
       texts: (
-        <div className="description">
+        <div>
           <h2>About</h2>
           <p>
             Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio
@@ -80,7 +76,7 @@ const Blog = () => {
       subtitle: 'A comprehensive guide to setting up your professional portfolio in minutes',
       createDate: '1 month ago',
       texts: (
-        <div className="description">
+        <div>
           <h2>About</h2>
           <p>
             Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio
@@ -96,32 +92,13 @@ const Blog = () => {
       )
     }
   ]
-
-  const currentBlog = blogs.filter(blog => blog.id === Number(id))[0]
-
   return (
-    <div className="blog">
-      <div className="blog-header">
-        <div className="blog-author">
-          <div className="blog-author-info">
-            <img src={poster} alt="poster" />
-            <p>Luz Wintheiser</p>
-          </div>
-          <p>{currentBlog.createDate}</p>
-        </div>
-        <Link to="/blog">
-          <Button size="xl">
-            <p>blogs</p>
-          </Button>
-        </Link>
-      </div>
-      <div className="blog-info">
-        <div className="blog-title">
-          <h1>{currentBlog.title}</h1>
-          <p>{currentBlog.subtitle}</p>
-        </div>
-        <img className="poster" src={currentBlog.poster} alt="img" />
-        {currentBlog.texts}
+    <div className={styles.blogs}>
+      <p>Blogs</p>
+      <div className={styles.blogsList}>
+        {blogs.map(blog => {
+          return <BlogCard key={blog.id} blog={blog} />
+        })}
       </div>
     </div>
   )

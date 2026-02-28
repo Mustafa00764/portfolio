@@ -1,0 +1,12 @@
+.technoGrid {
+  width: 100%;
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  padding: 24px 32px 32px 32px;
+  justify-content: center;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}

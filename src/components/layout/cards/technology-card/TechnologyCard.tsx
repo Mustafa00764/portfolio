@@ -1,23 +1,66 @@
-import React from 'react'
-import '@assets/styles/components/technology.css'
+import React, { JSX, useState } from 'react'
+import styles from './TechnologyCard.module.css'
 
 interface TechnologyProps {
   title: string
+  text: string
   color: string
   img: string
-  icon: React.ReactNode
+  icon: JSX.Element
 }
 
-const TechnologyCard: React.FC<TechnologyProps> = ({ title, color, icon }) => {
+const TechnologyCard: React.FC<TechnologyProps> = ({ title, text, color, icon }) => {
+  const [isHover, setIsHover] = useState(false)
+
+  const handleMouseEnter = () => {
+    setIsHover(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHover(false)
+  }
+
+  const boxStyle = {
+    border: isHover ? `1px solid ${color}E5` : '',
+    color: color
+  }
+
   return (
-    <div className="technology">
-      <div className="tech-icon-back" style={{ color: color }}>
-        {icon}
+    <div
+      className={styles.technology}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div
+        className={styles.gradient}
+        style={{ background: color, opacity: isHover && title === 'Figma' ? '.9' : '0' }}
+      ></div>
+      <div
+        className={styles.main}
+        title={title.toUpperCase()}
+        style={{ boxShadow: isHover ? `0px 0px 24px 3px ${color}E5` : '' }}
+      >
+        <div className={styles.iconBack} style={{ color: color }}>
+          {icon}
+        </div>
+        <div className={styles.icon} style={boxStyle}>
+          {icon}
+        </div>
+        <div className={styles.title} style={{ background: color }}>
+          <p>{title}</p>
+        </div>
       </div>
-      <div className="tech-icon" style={{ color: color }}>
-        {icon}
-      </div>
-      <p className="tech-title">{title}</p>
+      <h4
+        className={styles.text}
+        title={text.toUpperCase()}
+        style={
+          title === 'Figma'
+            ? { color: 'transparent', backgroundImage: color, backgroundClip: 'text' }
+            : { color: color }
+        }
+      >
+        {text}
+      </h4>
     </div>
   )
 }

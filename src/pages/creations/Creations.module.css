@@ -36,29 +36,7 @@
   position: relative;
 }
 
-.swiper-slide {
-  max-width: calc(100% / 2.5) !important;
-  width: auto;
-  height: 100%;
-  margin-top: 8px;
-  position: relative;
-}
-
-.swiper-button-prev {
-  width: 15px !important;
-  left: 25% !important;
-  top: 45% !important;
-  color: var(--color-grey-1) !important;
-}
-
-.swiper-button-next {
-  width: 15px !important;
-  right: 25% !important;
-  top: 45% !important;
-  color: var(--color-grey-1) !important;
-}
-
-.portfolio-slide-description {
+.portfolioSlideDescription {
   width: 39.7%;
   padding: 16px;
   padding-top: 0;
@@ -74,7 +52,7 @@
   }
 }
 
-.portfolio-slide-icon {
+.portfolioSlideIcon {
   width: 100%;
   color: var(--color-blue);
 }

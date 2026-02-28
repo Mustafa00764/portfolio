@@ -1,5 +1,5 @@
 import ServiceCard from '@/components/layout/cards/ServiceCard'
-import '@assets/styles/pages/services.css'
+import styles from './Services.module.css'
 import { useState, ChangeEvent, JSX, SubmitEvent } from 'react'
 interface Service {
   id: number
@@ -821,13 +821,13 @@ const Services = () => {
   )
 
   return (
-    <div className="services">
-      <p className="services-title">achievements</p>
-      <div className='services-forms'>
-        <form className="services-form" onSubmit={handleSubmit}>
+    <div className={styles.services}>
+      <p className={styles.title}>achievements</p>
+      <div className={styles.forms}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           {filters.map(filter => (
             <div key={filter.id}>
-              <label htmlFor={filter.title} className="services-filter">
+              <label htmlFor={filter.title} className={styles.filter}>
                 <input
                   type="radio"
                   id={filter.title}
@@ -841,12 +841,12 @@ const Services = () => {
             </div>
           ))}
         </form>
-        <form className="services-form">
+        <form className={styles.form}>
           {categories.map(filter => (
             <div key={filter.id}>
               <label
                 htmlFor={filter.title === 'all' ? 'all2' : filter.title}
-                className="services-filter"
+                className={styles.filter}
               >
                 <input
                   type="radio"
@@ -862,7 +862,7 @@ const Services = () => {
           ))}
         </form>
       </div>
-      <div className="services-grid">
+      <div className={styles.grid}>
         {filterAll.map(service => {
           return <ServiceCard key={service.id} service={service} />
         })}

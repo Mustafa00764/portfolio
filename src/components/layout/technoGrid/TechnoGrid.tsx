@@ -1,13 +1,14 @@
-import React from 'react'
-import TechnologyCard from '../cards/TechnologyCard'
-import '@assets/styles/components/technoGrid.css'
+import React, { JSX } from 'react'
+import TechnologyCard from '../cards/technology-card/TechnologyCard'
+import styles from './TechnoGrid.module.css'
 
 interface Technology {
   id: number
   title: string
+  text: string
   color: string
   img: string
-  icon: React.ReactNode
+  icon: JSX.Element
 }
 
 interface TechnoGridProps {
@@ -17,12 +18,13 @@ interface TechnoGridProps {
 
 const TechnoGrid: React.FC<TechnoGridProps> = ({ technologies }) => {
   return (
-    <div className="techno-grid">
+    <div className={styles.technoGrid}>
       {technologies.map(tech => {
         return (
           <TechnologyCard
             key={tech.id}
             title={tech.title}
+            text={tech.text}
             icon={tech.icon}
             color={tech.color}
             img={tech.img}
