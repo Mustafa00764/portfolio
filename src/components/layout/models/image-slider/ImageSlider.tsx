@@ -13,7 +13,7 @@ interface ImageSliderProps {
   images?: string[]
 }
 
-const ImageSlider = ({ images }: ImageSliderProps) => {
+const ImageSlider = ({}: ImageSliderProps) => {
   const { closeModal } = useModal()
   const [close, setClose] = useState<boolean>(false)
 

@@ -74,7 +74,7 @@ const GeometryDash: React.FC = () => {
 
   const [isJumping, setIsJumping] = useState(false)
   const [showScores, setShowScores] = useState(false)
-  const { initSounds, playJump, playDeath, startMusic, stopMusic } = useSounds()
+  const { initSounds, startMusic, stopMusic } = useSounds()
 
   useEffect(() => {
     initSounds()
@@ -105,125 +105,125 @@ const GeometryDash: React.FC = () => {
     }
   }, [gameState.gameStarted, gameState.gameOver, startMusic])
 
-  const update = useCallback(
-    (deltaTime: number) => {
-      setGameState(prev => {
-        if (!prev.gameStarted || prev.gameOver) return prev
+  // const update = useCallback(
+  //   (deltaTime: number) => {
+  //     setGameState(prev => {
+  //       if (!prev.gameStarted || prev.gameOver) return prev
 
-        // Нормируем дельту для стабильности
-        const dt = Math.min(deltaTime / 16, 2) // примерно 60 FPS
+  //       // Нормируем дельту для стабильности
+  //       const dt = Math.min(deltaTime / 16, 2) // примерно 60 FPS
 
-        let newPlayer = { ...prev.player }
-        let newObstacles = [...prev.obstacles]
-        let newPortals = [...prev.portals]
-        let newParticles = [...prev.particles]
-        let gameOver = false
+  //       let newPlayer = { ...prev.player }
+  //       let newObstacles = [...prev.obstacles]
+  //       let newPortals = [...prev.portals]
+  //       let newParticles = [...prev.particles]
+  //       let gameOver = false
 
-        // Гравитация
-        newPlayer.vel.y += newPlayer.gravity * dt
+  //       // Гравитация
+  //       newPlayer.vel.y += newPlayer.gravity * dt
 
-        // Прыжок
-        if (isJumping && newPlayer.isGrounded) {
-          newPlayer.vel.y = newPlayer.jumpForce
-          newPlayer.isGrounded = false
-          playJump()
-        }
+  //       // Прыжок
+  //       if (isJumping && newPlayer.isGrounded) {
+  //         newPlayer.vel.y = newPlayer.jumpForce
+  //         newPlayer.isGrounded = false
+  //         playJump()
+  //       }
 
-        // Обновление позиции
-        newPlayer.pos.y += newPlayer.vel.y * dt
+  //       // Обновление позиции
+  //       newPlayer.pos.y += newPlayer.vel.y * dt
 
-        // Коллизия с землёй
-        if (newPlayer.pos.y + newPlayer.size > GROUND_Y) {
-          newPlayer.pos.y = GROUND_Y - newPlayer.size
-          newPlayer.vel.y = 0
-          newPlayer.isGrounded = true
-        } else {
-          newPlayer.isGrounded = false
-        }
+  //       // Коллизия с землёй
+  //       if (newPlayer.pos.y + newPlayer.size > GROUND_Y) {
+  //         newPlayer.pos.y = GROUND_Y - newPlayer.size
+  //         newPlayer.vel.y = 0
+  //         newPlayer.isGrounded = true
+  //       } else {
+  //         newPlayer.isGrounded = false
+  //       }
 
-        // Сдвигаем мир влево (игрок стоит на месте)
-        const scroll = prev.speed * dt
-        newObstacles = newObstacles.map(obs => ({ ...obs, x: obs.x - scroll }))
-        newPortals = newPortals.map(portal => ({ ...portal, x: portal.x - scroll }))
-        newParticles = newParticles.map(p => ({ ...p, x: p.x - scroll }))
+  //       // Сдвигаем мир влево (игрок стоит на месте)
+  //       const scroll = prev.speed * dt
+  //       newObstacles = newObstacles.map(obs => ({ ...obs, x: obs.x - scroll }))
+  //       newPortals = newPortals.map(portal => ({ ...portal, x: portal.x - scroll }))
+  //       newParticles = newParticles.map(p => ({ ...p, x: p.x - scroll }))
 
-        // Убираем объекты, ушедшие за левый край
-        newObstacles = newObstacles.filter(obs => obs.x + obs.width > 0)
-        newPortals = newPortals.filter(portal => portal.x > -50)
+  //       // Убираем объекты, ушедшие за левый край
+  //       newObstacles = newObstacles.filter(obs => obs.x + obs.width > 0)
+  //       newPortals = newPortals.filter(portal => portal.x > -50)
 
-        for (const obs of newObstacles) {
-          if (
-            newPlayer.pos.x < obs.x + obs.width &&
-            newPlayer.pos.x + newPlayer.size > obs.x &&
-            newPlayer.pos.y < obs.y + obs.height &&
-            newPlayer.pos.y + newPlayer.size > obs.y
-          ) {
-            gameOver = true
-            stopMusic()
-            playDeath()
-            // Создаём частицы при смерти
-            for (let i = 0; i < 20; i++) {
-              newParticles.push({
-                x: newPlayer.pos.x + newPlayer.size / 2,
-                y: newPlayer.pos.y + newPlayer.size / 2,
-                vx: (Math.random() - 0.5) * 10,
-                vy: (Math.random() - 0.5) * 10,
-                life: 1.0,
-                color: newPlayer.color
-              })
-            }
-            break
-          }
-        }
+  //       for (const obs of newObstacles) {
+  //         if (
+  //           newPlayer.pos.x < obs.x + obs.width &&
+  //           newPlayer.pos.x + newPlayer.size > obs.x &&
+  //           newPlayer.pos.y < obs.y + obs.height &&
+  //           newPlayer.pos.y + newPlayer.size > obs.y
+  //         ) {
+  //           gameOver = true
+  //           stopMusic()
+  //           playDeath()
+  //           // Создаём частицы при смерти
+  //           for (let i = 0; i < 20; i++) {
+  //             newParticles.push({
+  //               x: newPlayer.pos.x + newPlayer.size / 2,
+  //               y: newPlayer.pos.y + newPlayer.size / 2,
+  //               vx: (Math.random() - 0.5) * 10,
+  //               vy: (Math.random() - 0.5) * 10,
+  //               life: 1.0,
+  //               color: newPlayer.color
+  //             })
+  //           }
+  //           break
+  //         }
+  //       }
 
-        for (const portal of newPortals) {
-          if (Math.abs(portal.x - PLAYER_START_X) < 10) {
-            // игрок стоит на месте, проверяем по x портала
-            newPlayer.mode = portal.mode
-            // Здесь можно менять физику под новый режим
-            // Для примера оставим
-          }
-        }
+  //       for (const portal of newPortals) {
+  //         if (Math.abs(portal.x - PLAYER_START_X) < 10) {
+  //           // игрок стоит на месте, проверяем по x портала
+  //           newPlayer.mode = portal.mode
+  //           // Здесь можно менять физику под новый режим
+  //           // Для примера оставим
+  //         }
+  //       }
 
-        newParticles = newParticles
-          .map(p => ({
-            ...p,
-            x: p.x + p.vx,
-            y: p.y + p.vy,
-            vy: p.vy + 0.2, // гравитация частиц
-            life: p.life - 0.01
-          }))
-          .filter(p => p.life > 0)
+  //       newParticles = newParticles
+  //         .map(p => ({
+  //           ...p,
+  //           x: p.x + p.vx,
+  //           y: p.y + p.vy,
+  //           vy: p.vy + 0.2, // гравитация частиц
+  //           life: p.life - 0.01
+  //         }))
+  //         .filter(p => p.life > 0)
 
-        if (newObstacles.length < 5 && Math.random() < 0.01) {
-          const lastX = newObstacles.length > 0 ? Math.max(...newObstacles.map(o => o.x)) : 0
-          if (lastX < CANVAS_WIDTH) {
-            newObstacles.push({
-              x: CANVAS_WIDTH + 200,
-              y: GROUND_Y - 40,
-              width: 30,
-              height: 40,
-              type: 'block'
-            })
-          }
-        }
+  //       if (newObstacles.length < 5 && Math.random() < 0.01) {
+  //         const lastX = newObstacles.length > 0 ? Math.max(...newObstacles.map(o => o.x)) : 0
+  //         if (lastX < CANVAS_WIDTH) {
+  //           newObstacles.push({
+  //             x: CANVAS_WIDTH + 200,
+  //             y: GROUND_Y - 40,
+  //             width: 30,
+  //             height: 40,
+  //             type: 'block'
+  //           })
+  //         }
+  //       }
 
-        const newScore = prev.score + prev.speed * dt * 0.1
+  //       const newScore = prev.score + prev.speed * dt * 0.1
 
-        return {
-          ...prev,
-          player: newPlayer,
-          obstacles: newObstacles,
-          portals: newPortals,
-          particles: newParticles,
-          cameraX: prev.cameraX + scroll,
-          score: newScore,
-          gameOver
-        }
-      })
-    },
-    [isJumping, playJump, playDeath, stopMusic]
-  )
+  //       return {
+  //         ...prev,
+  //         player: newPlayer,
+  //         obstacles: newObstacles,
+  //         portals: newPortals,
+  //         particles: newParticles,
+  //         cameraX: prev.cameraX + scroll,
+  //         score: newScore,
+  //         gameOver
+  //       }
+  //     })
+  //   },
+  //   [isJumping, playJump, playDeath, stopMusic]
+  // )
 
   useEffect(() => {
     const canvas = canvasRef.current

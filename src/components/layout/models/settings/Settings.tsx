@@ -2,7 +2,7 @@ import styles from './Settings.module.css'
 import Button from '@/components/ui/Button'
 import RangeSlider from '@/components/ui/range-slider/RangeSlider'
 import { useModal } from '@/hooks/useModal'
-import React, { useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
 
 const Settings = () => {
   const { closeModal } = useModal()
