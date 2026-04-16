@@ -37,61 +37,13 @@ const TechnoGrid: React.FC<TechnoGridProps> = ({ technologies }) => {
 
 export default TechnoGrid
 
-// const rowsCards = useMemo(() => {
-//   const length = technologies.length
-//   const grid = []
-//   let techIndex = 0
+// let isDragging = false;
+// let dragStartX = undefined;
+// let dragStartY = undefined;
 
-//   for (let i = 0; i < length; i++) {
-//     const isEvenRow = i % 2 === 0
-//     const rowSize = isEvenRow ? rows : rows - 1
+// let previousAnimationTimestamp = undefined;
+// let animationFrameRequestID = undefined;
+// let delayTimeoutID = undefined;
 
-//     const row = technologies.slice(techIndex, techIndex + rowSize)
-//     grid.push(row)
-//     techIndex += rowSize
-//   }
-
-//   return grid.filter(item => item.length !== 0)
-// }, [technologies, rows])
-// {
-//   rowsCards.map((row, i) => {
-//     return (
-//       <div
-//         key={i}
-//         style={
-//           i % 2 !== 0
-//             ? {
-//                 display: 'grid',
-//                 gridTemplateColumns: `${1 / (rowsCards[0].length + 1)}fr repeat(1, 1fr) ${1 / (rowsCards[0].length + 1)}fr`,
-//                 gap: `${24 / (rowsCards[0].length + 1)}px`
-//               }
-//             : {
-//                 display: 'grid',
-//                 gridTemplateColumns: `repeat(1, 1fr)`
-//               }
-//         }
-//         className="techno-cards"
-//       >
-//         <div
-//           className="techno-card"
-//           style={{
-//             display: 'grid',
-//             gridTemplateColumns: `repeat(${i % 2 === 0 ? rows : rows - 1}, 1fr)`
-//           }}
-//         >
-//           {row.map(tech => {
-//             return (
-//               <TechnologyCard
-//                 key={tech.id}
-//                 title={tech.title}
-//                 icon={tech.icon}
-//                 color={tech.color}
-//                 img={tech.img}
-//               />
-//             )
-//           })}
-//         </div>
-//       </div>
-//     )
-//   })
-// }
+// let simulationMode = false;
+// let simulationImpact = {};

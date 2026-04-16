@@ -1,0 +1,18 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.canvas {
+  border: 2px solid #333;
+  background-color: #111;
+}
+
+.restartButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
 .gameCard {
+  max-width: 240px;
   width: 100%;
   height: auto;
   display: flex;
@@ -8,10 +9,11 @@
 
   img {
     width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: contain top;
     border: var(--border-grey-1);
     border-radius: var(--border-radius-3);
   }
-
 
   h3 {
     font-size: 18px;
@@ -24,5 +26,4 @@
     line-height: 100%;
     color: var(--color-grey-1);
   }
-
 }

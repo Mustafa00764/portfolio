@@ -1,4 +1,4 @@
-import Border from '@/components/ui/Border'
+import Border from '@/components/ui/border/Border'
 import Button from '@/components/ui/Button'
 import React from 'react'
 import '@assets/styles/components/portfolioCard.css'

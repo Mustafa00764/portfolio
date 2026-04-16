@@ -1,7 +1,9 @@
 import Button from '@/components/ui/Button'
+import { useModal } from '@/hooks/useModal'
 import '@assets/styles/components/sidebarRight.css'
 
 const SidebarRight = () => {
+  const { openModal } = useModal()
   return (
     <div className="sidebar-right">
       <div className="sidebar-right-info">
@@ -61,7 +63,7 @@ const SidebarRight = () => {
 
           </div>
         </div> */}
-        <Button variant="border" size="2xl" className="btn-setting">
+        <Button variant="border" size="2xl" className="btn-setting" onClick={() => openModal('settings', {}, 'top')}>
           <h3>visual settings</h3>
           <div className="setting-icon">
             <svg

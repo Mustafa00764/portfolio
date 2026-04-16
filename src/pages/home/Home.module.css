@@ -9,3 +9,13 @@
 .homeTitle {
   letter-spacing: 0.1em;
 }
+
+
+@media screen and (max-width: 950px) {
+  .home {
+    padding: 24px;
+  }
+  .homeTitle {
+    font-size: 24px;
+  }
+}

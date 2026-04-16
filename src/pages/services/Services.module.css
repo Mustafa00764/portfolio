@@ -43,6 +43,7 @@
     appearance: none;
     border-radius: var(--border-radius-3);
     width: 16px;
+    padding: 0;
     height: 16px;
     border: var(--border-blue-1);
     transition: 0.2s all linear;
@@ -50,6 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: transparent;
   }
 
   p {

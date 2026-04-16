@@ -1,0 +1,206 @@
+.gameContainer {
+  position: relative;
+  width: 100%;
+  height: 100%; /* или любые другие размеры */
+  overflow: hidden;
+
+  p {
+    font-size: 14px;
+    line-height: 125%;
+  }
+}
+.main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.game {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background: transparent;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: var(--border-radius-3);
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.infoLeft,
+.infoRight {
+  position: absolute;
+  top: 20px;
+}
+
+.infoLeft {
+  left: 25px;
+}
+
+.infoRight {
+  right: 25px;
+  text-align: right;
+}
+
+.bombGrabArea {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: grab;
+}
+
+.instructions,
+.congratulations {
+  position: absolute;
+  transition: visibility 0s, opacity 0.5s linear;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-height: 535px) {
+  .instructions {
+    min-height: 200px;
+  }
+}
+
+.congratulations {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 24px 32px;
+  opacity: 0;
+  visibility: hidden;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+  border-radius: var(--border-radius-3);
+  backdrop-filter: blur(5px);
+}
+
+.congratulations p a {
+  color: inherit;
+}
+
+.congratulations button {
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  color: inherit;
+}
+
+.settings {
+  position: absolute;
+  top: calc(20px + 16.385px - 10px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  right: 11em;
+}
+
+.settings,
+.infoLeft,
+.infoRight {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+@media (max-width: 450px) {
+  .settings,
+  .infoLeft,
+  .infoRight {
+    opacity: 0;
+  }
+  .instructions {
+    visibility: hidden;
+  }
+}
+
+.windFlag {
+  height: 36px;
+}
+
+/* Basic CSS for the dropdown */
+.dropdown {
+  width: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn:after {
+  content: "▼";
+  margin-left: 7px;
+  font-size: 0.8em;
+  vertical-align: text-top;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  border-radius: var(--border-radius-3);
+  overflow: hidden;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdownContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+
+.dropdownContent a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown content when hovering over the button */
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+.windmill {
+  position: absolute;
+  right: 0;
+  fill: rgba(255, 255, 255, 1);
+  transform-origin: bottom;
+}
+
+.windmillHead {
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.windInfo {
+  width: 100%;
+  text-wrap: nowrap;
+  padding: 8px 12px;
+  color: var(--color-dark);
+  font-size: 14px;
+}
+
+
+

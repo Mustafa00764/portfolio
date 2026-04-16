@@ -11,6 +11,8 @@ interface TechnologyProps {
 
 const TechnologyCard: React.FC<TechnologyProps> = ({ title, text, color, icon }) => {
   const [isHover, setIsHover] = useState(false)
+  const gradientTechnologies = ['Figma', 'Ant Design', 'GitLab']
+  const gradientCard = gradientTechnologies.map(technology => title === technology).includes(true)
 
   const handleMouseEnter = () => {
     setIsHover(true)
@@ -21,9 +23,13 @@ const TechnologyCard: React.FC<TechnologyProps> = ({ title, text, color, icon })
   }
 
   const boxStyle = {
-    border: isHover ? `1px solid ${color}E5` : '',
+    border: isHover ? (gradientCard ? '1px solid transparent' : `1px solid ${color}E5`) : '',
+    background: gradientCard
+      ? `linear-gradient(#000003, #000003 0) padding-box, ${color} border-box`
+      : '',
     color: color
   }
+
 
   return (
     <div
@@ -33,17 +39,20 @@ const TechnologyCard: React.FC<TechnologyProps> = ({ title, text, color, icon })
     >
       <div
         className={styles.gradient}
-        style={{ background: color, opacity: isHover && title === 'Figma' ? '.9' : '0' }}
+        style={{
+          background: color,
+          opacity: isHover && gradientCard ? '.9' : '0'
+        }}
       ></div>
       <div
         className={styles.main}
         title={title.toUpperCase()}
         style={{ boxShadow: isHover ? `0px 0px 24px 3px ${color}E5` : '' }}
       >
-        <div className={styles.iconBack} style={{ color: color }}>
-          {icon}
-        </div>
         <div className={styles.icon} style={boxStyle}>
+          <div className={styles.iconBack} style={{ color: color }}>
+            {icon}
+          </div>
           {icon}
         </div>
         <div className={styles.title} style={{ background: color }}>
@@ -54,7 +63,7 @@ const TechnologyCard: React.FC<TechnologyProps> = ({ title, text, color, icon })
         className={styles.text}
         title={text.toUpperCase()}
         style={
-          title === 'Figma'
+          gradientCard
             ? { color: 'transparent', backgroundImage: color, backgroundClip: 'text' }
             : { color: color }
         }

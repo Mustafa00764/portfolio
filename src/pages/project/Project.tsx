@@ -1,11 +1,13 @@
 import { useParams } from 'react-router-dom'
 import styles from './Project.module.css'
 import { useEffect, useMemo } from 'react'
-import Border from '@/components/ui/Border'
+import Border from '@/components/ui/border/Border'
 import Button from '@/components/ui/Button'
+import { useModal } from '@/hooks/useModal'
 
 const Project = () => {
   const { id } = useParams()
+  const { openModal } = useModal()
 
   const technologies = [
     {
@@ -606,7 +608,7 @@ const Project = () => {
   ]
 
   useEffect(() => {}, [])
-  
+
   const filteredTechnology = useMemo(() => {
     const list = [1, 3, 4, 7, 8, 12, 13, 16]
     const technoList = []
@@ -727,7 +729,11 @@ const Project = () => {
               {technologies.map((item, index) => {
                 if (index > 8) return
                 return (
-                  <div className={styles.fileXplorerImage}>
+                  <div
+                    key={index}
+                    className={styles.fileXplorerImage}
+                    onClick={() => openModal('imageSlider', {}, 'top')}
+                  >
                     <div className={styles.image}></div>
                     <div className={styles.imageTitle}>
                       <p>{item.title}.jpg</p>
@@ -739,8 +745,12 @@ const Project = () => {
             </div>
           </Border>
           <div className={styles.btns}>
-            <Button variant='full-blue' size='3xl'>view project demo</Button>
-            <Button variant='blue' size='3xl' className={styles.btnBlue}>Back to all projects</Button>
+            <Button variant="full-blue" size="3xl">
+              view project demo
+            </Button>
+            <Button variant="blue" size="3xl" className={styles.btnBlue}>
+              Back to all projects
+            </Button>
           </div>
         </div>
       </div>

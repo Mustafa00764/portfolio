@@ -1,0 +1,89 @@
+.rangeSlider {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  h3 {
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--color-blue);
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1;
+    color: var(--color-grey-1);
+
+    span {
+      color: var(--color-white);
+    }
+  }
+}
+
+.texts {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inputContainer {
+  width: 100%;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-dark);
+  position: relative;
+  border: var(--border-grey-4);
+  border-radius: var(--border-radius-3);
+}
+
+.slider {
+  -webkit-appearance: none;
+  min-width: calc(100% + 38px);
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: var(--border-radius-8);
+  background: transparent;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  padding: 0;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 38px;
+  height: 35px;
+  background: var(--color-blue);
+  color: var(--color-blue);
+  background-image: var(--thumb-image);
+  cursor: pointer;
+  border-radius: var(--border-radius-6) var(--border-radius-1) var(--border-radius-1);
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+  scroll-behavior: smooth;
+}
+
+.slider::-moz-range-thumb {
+  width: 38px;
+  height: 35px;
+  background: var(--color-blue);
+  color: var(--color-blue);
+  background-image: url(/icons/hudhue.svg);
+  cursor: pointer;
+  border-radius: var(--border-radius-6) var(--border-radius-1) var(--border-radius-1);
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+  scroll-behavior: smooth;
+}

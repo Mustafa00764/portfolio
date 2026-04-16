@@ -20,24 +20,24 @@ const Games = () => {
     },
     {
       id: 3,
-      title: 'gain life',
+      title: 'tower defense',
       text: 'click the hearts',
-      image: '/images/gain-life.png',
-      slug: 'gain-life'
+      image: '/images/tower-defense.png',
+      slug: 'tower-defense'
     },
     {
       id: 4,
-      title: 'gain life',
+      title: 'Gorillas',
       text: 'click the hearts',
-      image: '/images/gain-life.png',
-      slug: 'gain-life'
+      image: '/images/gorillas.png',
+      slug: 'gorillas'
     },
     {
       id: 5,
-      title: 'gain life',
-      text: 'click the hearts',
+      title: 'arcanoid',
+      text: 'destroy the bricks game',
       image: '/images/gain-life.png',
-      slug: 'gain-life'
+      slug: 'arcanoid'
     },
     {
       id: 6,

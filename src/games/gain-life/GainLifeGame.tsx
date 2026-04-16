@@ -80,8 +80,8 @@ function loadHighscore(): Highscore {
 function saveHighscore(next: Highscore) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
-  } catch {
-    // ignore
+  } catch (error) {
+    console.log(error)
   }
 }
 
@@ -309,7 +309,12 @@ export function GainLifeGame() {
       <header className={styles.header}>
         <div className={styles.brand}>
           {/* Подставь свой путь к лого */}
-          <img className={styles.logo} src={'/images/gain-life.png'} alt="Gain Life" draggable={false} />
+          <img
+            className={styles.logo}
+            src={'/images/gain-life.png'}
+            alt="Gain Life"
+            draggable={false}
+          />
           <div className={styles.titles}>
             <div className={styles.title}>GAIN LIFE</div>
             <div className={styles.subtitle}>click the hearts</div>
@@ -374,13 +379,13 @@ export function GainLifeGame() {
           ))}
 
           {/* Всплывающие числа */}
-          {floatingText.map(t => (
+          {floatingText.map(num => (
             <div
-              key={t.id}
-              className={`${styles.float} ${t.kind === 'good' ? styles.good : styles.bad}`}
-              style={{ left: `${t.x}%`, top: `${t.y}%` }}
+              key={num.id}
+              className={`${styles.float} ${num.kind === 'good' ? styles.good : styles.bad}`}
+              style={{ left: `${num.x}%`, top: `${num.y}%` }}
             >
-              {t.text}
+              {num.text}
             </div>
           ))}
 
@@ -391,13 +396,13 @@ export function GainLifeGame() {
                 <>
                   <div className={styles.overlayTitle}>Ready?</div>
                   <div className={styles.overlayText}>
-                    Нажимай по сердцам. Золотые дают больше Life, красные ловушки — отнимают.
+                    Click on the hearts. Gold ones give more Life, red traps take away more.
                   </div>
                   <button className={styles.primaryBtn} onClick={start}>
                     Start
                   </button>
                   <div className={styles.hint}>
-                    Лучший результат: <b>{highscore.bestLife}</b> Life • Лучшее комбо:{' '}
+                    The best result: <b>{highscore.bestLife}</b> Life • The best combo:{' '}
                     <b>{highscore.bestCombo}</b>
                   </div>
                 </>
@@ -411,7 +416,7 @@ export function GainLifeGame() {
                   </div>
 
                   <div className={styles.hint}>
-                    Рекорд: <b>{highscore.bestLife}</b> Life • Комбо рекорд:{' '}
+                    Rekord: <b>{highscore.bestLife}</b> Life • Combo record:{' '}
                     <b>{highscore.bestCombo}</b>
                   </div>
 

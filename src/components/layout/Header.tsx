@@ -2,10 +2,12 @@ import '@assets/styles/header.css'
 import Button from '../ui/Button'
 import { useState } from 'react'
 import { useTimes } from '@/hooks/useTimes'
+import { useModal } from '@/hooks/useModal'
 
 const Header = () => {
   const [coin, setCoin] = useState(1425)
   const { serverTime, localTime } = useTimes()
+  const { openModal } = useModal()
 
   const addCoin = () => {
     setCoin(coin + 1)
@@ -42,7 +44,7 @@ const Header = () => {
         </div>
       </div>
       <div className="times">
-        <Button onClick={() => console.log('click')}>
+        <Button onClick={() => openModal('credits', {}, 'left')}>
           <p>credits</p>
         </Button>
         <div className="server-time">

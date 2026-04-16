@@ -148,7 +148,7 @@ const Creations = () => {
         //   type: 'fraction'
         // }}
         modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-        className={styles.mySwiper}
+        className={`${styles.mySwiper} mySwiper`}
       >
         {slides.map(slide => {
           return (
@@ -163,7 +163,7 @@ const Creations = () => {
         <div className={styles.portfolioSlideIcon}>
           <svg
             width="100%"
-            height="auto"
+            height="100%"
             viewBox="0 0 374 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

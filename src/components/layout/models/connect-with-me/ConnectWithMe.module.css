@@ -1,0 +1,126 @@
+.hire {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  left: 0;
+  top: 0;
+  padding: 32px 78px;
+  position: absolute;
+  align-items: center;
+  z-index: 5;
+  opacity: 1;
+  background-color: var(--color-dark-6);
+  animation: animStart 0.3s linear;
+}
+
+.animation {
+  animation: animEnd 0.15s linear;
+}
+
+.model {
+  max-width: 470px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  h3 {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.075em;
+  }
+
+  p {
+    line-height: 1;
+    color: var(--color-grey-10);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form {
+  position: relative;
+  overflow: hidden;
+  border: var(--border-grey-1);
+  border-radius: var(--border-radius-3);
+  clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  background-color: var(--blue-transparent-1);
+  backdrop-filter: blur(13px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 15px;
+    top: -3px;
+    left: 3.7px;
+    background-color: var(--color-grey-2);
+    transform: rotate(45deg);
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  label {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.075em;
+    color: var(--color-blue);
+  }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 16px;
+
+  button {
+    letter-spacing: 0.075em;
+    font-size: 18px;
+    line-height: 22px;
+    height: 33px;
+  }
+}
+
+.btnBlue {
+  width: 100% !important;
+  justify-content: center !important;
+}
+
+@keyframes animStart {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animEnd {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

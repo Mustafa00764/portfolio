@@ -10,3 +10,37 @@
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
+
+@media screen and (max-width: 1440px) {
+  .technoGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .technoGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .technoGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .technoGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .technoGrid {
+    padding: 24px 0;
+    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: inherit;
+    height: auto;
+  }
+}

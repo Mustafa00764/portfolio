@@ -19,15 +19,17 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
     <Link to={`/blog/${blog.id}`} key={blog.id}>
       <div className="blog-card">
         <div className="blog-card-poster">
-          <img src={blog.poster} alt="" />
+          <img src={blog.poster} alt="image" />
         </div>
         <div className="blog-card-info">
           <div className="blog-card-author">
-            <div className="blog-card-author-info">
+            <div className="blog-card-author-poster">
               <img src={poster} alt="poster" />
-              <p>Luz Wintheiser</p>
             </div>
-            <p>{blog.createDate}</p>
+            <div className='blog-card-author-text'>
+              <p className='author-name'>Luz Wintheiser</p>
+              <p className='blog-date'>{blog.createDate}</p>
+            </div>
           </div>
           <h2>{blog.title}</h2>
           <p>{blog.subtitle}</p>

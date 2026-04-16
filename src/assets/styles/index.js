@@ -3,7 +3,6 @@ import './fonts.css'
 import './variables.css'
 import './app.css'
 
-import './components/border.css'
 import './components/button.css'
 import './components/sidebarLeft.css'
 import './components/sidebarRight.css'

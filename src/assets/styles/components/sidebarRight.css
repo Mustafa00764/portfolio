@@ -126,3 +126,18 @@
     }
   }
 }
+
+
+
+@media screen and (max-width: 1200px) {
+  .sidebar-right {
+    max-width: 170px;
+    min-width: 170px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .sidebar-right {
+   display: none;
+  }
+}

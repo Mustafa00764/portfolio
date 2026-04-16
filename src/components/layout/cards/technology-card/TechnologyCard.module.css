@@ -22,9 +22,9 @@
   z-index: -1;
   top: 0;
   left: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   filter: blur(15.5px);
-  border-radius: 8px;
+  border-radius: var(--border-radius-4);
 }
 
 .main {
@@ -36,8 +36,8 @@
   flex-direction: column;
   position: relative;
   background-color: var(--color-dark);
-  border-radius: var(--border-radius-3);
-  transition: box-shadow 0.3s ease;
+  border-radius: var(--border-radius-4);
+  transition: all 0.3s ease;
 }
 
 .iconBack {
@@ -45,7 +45,7 @@
   width: 100%;
   opacity: 0.5;
   filter: blur(30px);
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .icon {
@@ -54,12 +54,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
   border: var(--border-grey-4);
-  border-radius: var(--border-radius-3) var(--border-radius-3) 0 0;
+  border-radius: var(--border-radius-4) var(--border-radius-4) 0 0;
   border-bottom: none !important;
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
+
   & > svg {
+    z-index: 1;
     height: auto;
     width: 40%;
   }
@@ -91,4 +92,15 @@
   text-align: center;
   font-size: 16px;
   line-height: 125%;
+}
+
+
+@media screen and (max-width: 640px) {
+  .gradient {
+    display: none;
+  }
+
+  .main {
+    box-shadow: none !important;
+  }
 }

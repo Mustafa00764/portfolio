@@ -1,0 +1,29 @@
+.textarea {
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 230px;
+  max-height: 230px;
+  height: auto;
+  padding: 13px 18px;
+  font-family: 'Iceland', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  border: var(--border-grey-4);
+  border-radius: var(--border-radius-3);
+
+  &::placeholder {
+    color: var(--color-grey-1);
+  }
+}
