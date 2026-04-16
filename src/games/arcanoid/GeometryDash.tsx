@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 // import { useGameLoop } from '@hooks/useGameLoop'
 import { useSounds } from '@hooks/useSounds'
 import { GameState, Player, Obstacle, Portal } from '@/types/game'
@@ -230,6 +230,7 @@ const GeometryDash: React.FC = () => {
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
+    console.log(isJumping)
 
     const draw = () => {
       ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
