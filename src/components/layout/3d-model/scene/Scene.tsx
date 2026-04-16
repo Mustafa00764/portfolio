@@ -61,7 +61,7 @@ export default function Scene() {
         </svg>
       </div>
       <div className={`${styles.panel} ${panel ? styles.open : ''}`}>
-        <h1 className={styles.title}>V4 FINAL INSPECTOR</h1>
+        <h1 className={styles.title}>INSPECTOR</h1>
         <div className={styles.panelMain}>
           <Section label="Movement & Scale">
             <div className={styles.btnRow}>
